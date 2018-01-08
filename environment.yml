@@ -1,0 +1,16 @@
+name: capsule-gans
+channels:
+    - https://conda.anaconda.org/menpo
+dependencies:
+    - python==3.5
+    - numpy
+    - matplotlib
+    - jupyter
+    - tqdm
+    - tensorflow
+    - tensorflow-gpu
+    - keras
+    - scikit-learn
+    - pillow
+    - pydot
+    - graphviz

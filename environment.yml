@@ -10,6 +10,7 @@ dependencies:
     - tensorflow
     - tensorflow-gpu
     - keras
+    - pandas
     - scikit-learn
     - pillow
     - pydot

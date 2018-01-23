@@ -4,3 +4,5 @@ data/
 .floydignore
 *.pkl
 result/
+images_mnist/
+images_cifar10/

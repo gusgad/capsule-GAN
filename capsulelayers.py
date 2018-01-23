@@ -112,16 +112,17 @@ class CapsuleLayer(layers.Layer):
         # Now it has shape = [None, input_num_capsule, num_capsule, 1, input_dim_vector]
         inputs_tiled = K.tile(inputs_expand, [1, 1, self.num_capsule, 1, 1])
 
-        """ 
+        
         # Begin: inputs_hat computation V1 ---------------------------------------------------------------------#
         # Compute `inputs * W` by expanding the first dim of W. More time-consuming and need batch_size.
         # w_tiled.shape = [batch_size, input_num_capsule, num_capsule, input_dim_vector, dim_vector]
-        w_tiled = K.tile(K.expand_dims(self.W, 0), [self.batch_size, 1, 1, 1, 1])
+        w_tiled = K.tile(K.expand_dims(self.W, 0), [32, 1, 1, 1, 1])
         
         # Transformed vectors, inputs_hat.shape = [None, input_num_capsule, num_capsule, 1, dim_vector]
         inputs_hat = K.batch_dot(inputs_tiled, w_tiled, [4, 3])
         # End: inputs_hat computation V1 ---------------------------------------------------------------------#
-        """
+
+        """ 
 
         # Begin: inputs_hat computation V2 ---------------------------------------------------------------------#
         # Compute `inputs * W` by scanning inputs_tiled on dimension 0. This is faster but requires Tensorflow.
@@ -131,6 +132,7 @@ class CapsuleLayer(layers.Layer):
                              initializer=K.zeros([self.input_num_capsule, self.num_capsule, 1, self.dim_vector]))
         # End: inputs_hat computation V2 ---------------------------------------------------------------------#
         """
+        """ 
         # Begin: routing algorithm V1, dynamic ------------------------------------------------------------#
         def body(i, b, outputs):
             c = tf.nn.softmax(b, dim=2)  # dim=2 is the num_capsule dimension

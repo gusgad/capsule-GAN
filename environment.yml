@@ -1,4 +1,4 @@
-name: capsule-gans
+name: capsule-gan
 channels:
     - https://conda.anaconda.org/menpo
 dependencies:

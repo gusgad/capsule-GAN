@@ -7,6 +7,12 @@ Code for my Master thesis on "Capsule Layer as a Discriminator in Generative Adv
 * Image outputs
 * Metrics visualization
 
+***
+
+But first you may want to install [Miniconda](https://conda.io/miniconda.html) and corresponding dependencies from environment.yml:
+`conda env create -f environment.yml` within the project directory as well as install [required tools for GPU computing](https://www.tensorflow.org/install/install_windows#requirements_to_run_tensorflow_with_gpu_support). If no GPU is going to be used - delete the `tensorflow-gpu` line from environment.yml.
+
+
 ### Generated images
 ![MNIST_output](/out_metrics/mnist_output_sample.png?raw=true)
 ![CIFAR10_output](/out_metrics/cifar10_output_sample.png?raw=true)

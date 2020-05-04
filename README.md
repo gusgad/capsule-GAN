@@ -1,6 +1,6 @@
 # Capsule GAN
 
-[Link to the paper](https://drive.google.com/file/d/1LoaWLTq1mbEVRsYLqn-QjulPb229n9J9/view?usp=sharing)
+[Link to the paper](https://drive.google.com/file/d/15g9VFyGwjPnGcTzjXEDwvGpfNvPuRXqB/view?usp=sharing)
 
 Code for my Master thesis on "Capsule Layer as a Discriminator in Generative Adversarial Networks". In order to reproduce results, follow the "capsule_gan" Jupyter notebook that contains:
 * Dataset loading and preprocessing
